@@ -22,11 +22,10 @@ makeBooklets() {
 
 	; createdFiles := "" ; empty array of all made files (to process soon)
 	calcDims = true
-	i  := 0
+
 	; make booklets but with bad dimensions
 	Loop, %arrayOfFileNamesToProcess0%
 	{
-		i := i + 1
 		currentFileName := arrayOfFileNamesToProcess%a_index%
 
 		; do this first time only
@@ -47,7 +46,6 @@ makeBooklets() {
 		createdFiles = %createdFiles%`n%recent%
 	}
 
-	MsgBox, %i%
 
 	While ! FileExist(recent)
 		Sleep, 20
