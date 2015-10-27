@@ -1,0 +1,1 @@
+tell application "Finder" to set the clipboard to the POSIX path of (the selection as alias)
