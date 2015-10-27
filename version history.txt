@@ -1,0 +1,17 @@
+v0.2.0 --
+-I got rid of PdfBooklet as a dependency. After a few back and forths with Michael Schierl, creator of jPDF, he suggested a way that would allow me to use jPDF to do what it wasn't supposed to and make this program better.
+-- PdfBooklet was great but had no command line automation. jPDFTweak has capabilities for booklets but was designed more for non-US formats. A few tweaks with AHK and I was able to add in the necessary steps to make it compatible.
+-It now makes booklets based on whatever size you put into it (selected files must be the same size...!)
+-Mac Version also available (???)
+
+v0.12 -- released 2015-03-06 --
+-huge improvements in speed/reliability by using jPDF Tweak's ability to use the command line.  I got rid of PDFSaM also because it was unnecessary after this
+recent discovery.  Frankly it worked fine but automating the GUI is not full-proof and not as quick as using the command line.
+
+v0.11 -- released 2015-02-22 --
+-add some additional settings that include options to reverse or provide 
+	different orderings of paper depending on how the paper comes out of your
+	printer.
+
+v0.10 --  released 2015-02-20 --
+-first release
