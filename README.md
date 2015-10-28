@@ -26,6 +26,20 @@ Both osx and windows versions work in almost the same way. Using jPDFTweak, it t
 2. Go to WHEREVER you unzipped this repo and run "makeBookletsForMac-v0.2.0.app"
 3. The product will appear in the directory that your original pdfs were...
 
+# Windows Installation
+####
+1. Download and extract .zip to WHEREVER
+
+# Windows Usage
+####
+1. If you don't autohotkey installed, just run bookletMacros v0.2.0.exe. The script is now running.
+2. Hit CAPS, which brings up the GUI (hitting CAPS again will hide it). Go to the "Settings" tab, select the correct setting for your printer (you may have to experiment) and click "Save"
+3. Select the files you want to use it on and push CAPS. Click "1. make booklet"
+4. This will make new files in that folder with a "__" at the beginning of the file name. Select all of those, push CAPS, now click "2. separate even and odd"
+5. This will create more new files with "__even" and "__odd" added on. Now select all the "__even", hit CAPS, click "3. merge" and do the same for the "__odd".
+6. This will create your final product at the top of all of those files called "___1-odd.pdf" and "___2-even (and reversed" or something slightly different, depending on your settings in step 2.
+
+
 # It messed up...
 #### Just try it again and it should work.
 The resulting booklet size is determined by the first PDF that it processes... meaning they all have to be the same size. I.E. Don't select some 8.5 x 11's and 9 x 12's at the same time and run the macro. This would be a bad idea...
