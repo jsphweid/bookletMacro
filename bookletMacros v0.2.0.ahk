@@ -17,8 +17,7 @@ global oddEvenReversed
 SetCapsLockState, AlwaysOff
 
 ; This creates the menus/tabs that each contain 15 buttons.
-Gui, Add, Tab2,x-4 y-3 w520 h330 vTabGroup  AltSubmit, Menu 1|Settings
-
+Gui, Add, Tab2,x-4 y-3 w520 h330 vTabGroup  AltSubmit, Menu 1|Menu 2|Menu 3|Menu 4|Menu 5|Menu 6|Menu 7|Menu 8|Menu 9|Settings
 ; includes my customized macros for AHK... Things that let me write code better (better check/uncheck checkboxes)
 #Include, ahkCustomMacros.ahk
 #Include, bookletMacrosFunctions.ahk
