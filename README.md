@@ -1,4 +1,5 @@
-- [bookletMacros Overview](#bookletmacros-overview)
+# bookletMacros
+- [Overview](#overview)
       - [What is it?](#what-is-it)
       - [How it works in a nutshell.](#how-it-works-in-a-nutshell)
 - [Mac OS X Installation](#mac-os-x-installation)
@@ -10,7 +11,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# bookletMacros Overview
+# Overview
 This repository contains both the Windows and Mac files. FYI. 
 
 #### What is it?
