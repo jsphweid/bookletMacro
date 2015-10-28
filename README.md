@@ -1,18 +1,10 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
 - [bookletMacros Overview](#bookletmacros-overview)
       - [What is it?](#what-is-it)
       - [How it works in a nutshell.](#how-it-works-in-a-nutshell)
 - [Mac OS X Installation](#mac-os-x-installation)
-  - [](#)
 - [Mac OS X Usage](#mac-os-x-usage)
-    - [](#-1)
 - [Windows Installation](#windows-installation)
-    - [](#-2)
 - [Windows Usage](#windows-usage)
-    - [](#-3)
 - [It messed up...](#it-messed-up)
       - [Just try it again and it should work.](#just-try-it-again-and-it-should-work)
 
