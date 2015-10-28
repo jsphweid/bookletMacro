@@ -12,7 +12,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Overview
-This repository contains both the Windows and Mac files. FYI. 
+This repository contains both the Windows and Mac files. FYI. And it requires Java 5 or higher. 
 
 #### What is it?
 Basically, I wrote a wrapper for Michael Schierl's jPDFTweak that makes booklet printing simple. The exact use in an example: You have 20 music parts in 9 x 12 (or whatever page size)... say for an orchestra. Without a large-format printer that ALSO auto-duplexes, this is difficult and tricky. This makes it simple, however. 
