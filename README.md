@@ -22,8 +22,10 @@ Both osx and windows versions work in almost the same way. Using jPDFTweak, it t
 
 # Mac OS X Installation
 ###
+[updated 2015-10-30]
+Install is dead simple. Run the command below in the terminal. Give it a second to download. It will ask you to install a service. Click Okay a time or two. DONE.
+
 `curl -s https://raw.githubusercontent.com/jsphweid/bookletMacro/master/mac-osx/install | bash`
-[updated 2015-10-30] Install is dead simple. Run this command in the terminal. Give it a second to download. It will ask you to install a service. Click Okay a time or two. DONE.
 
 Alright, so you don't know what a "terminal" is? I'll spell it out.
 1. Copy the above code (highlight and hit ⌘ + c)
@@ -32,7 +34,7 @@ Alright, so you don't know what a "terminal" is? I'll spell it out.
 
 # Mac OS X Usage
 ####
-1. Now that the script should be registered as a Service, whenever you right-click (okay... two-finger tap) a file or group of PDFs (and only PDFs...), at the bottom you should see "Booklet Macro." Click it and wait for your two files to appear. (Should take some seconds, unless you gave it a lot to do, then maybe a minute).
+Now that the script should be registered as a Service, whenever you right-click (okay... two-finger tap) a file or group of PDFs (and only PDFs...), at the bottom you should see "Booklet Macro." Click it and wait for your two files to appear. (Should take some seconds, unless you gave it a lot to do, then maybe a minute).
 
 # Windows Installation
 ####
