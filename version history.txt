@@ -1,8 +1,13 @@
+v0.3.1 -- released 2015-03-06 --
+- Update for Mac version to make it dead simple to install using curl / terminal. Also, the process has changed to be even simpler. Simply select the pdfs, right click, click "Booklet Macro." DONE.
+
+v0.3.0 -- released 2015-03-04 --
+- Initial MAC version. I have 2 context menu items that copy file paths. Then you simply find the folder with the app and run it. Pretty simple. Could be better
+
 v0.2.0 --
 -I got rid of PdfBooklet as a dependency. After a few back and forths with Michael Schierl, creator of jPDF, he suggested a way that would allow me to use jPDF to do what it wasn't supposed to and make this program better.
 -- PdfBooklet was great but had no command line automation. jPDFTweak has capabilities for booklets but was designed more for non-US formats. A few tweaks with AHK and I was able to add in the necessary steps to make it compatible.
 -It now makes booklets based on whatever size you put into it (selected files must be the same size...!)
--Mac Version also available (???)
 
 v0.12 -- released 2015-03-06 --
 -huge improvements in speed/reliability by using jPDF Tweak's ability to use the command line.  I got rid of PDFSaM also because it was unnecessary after this
