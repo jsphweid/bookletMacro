@@ -61,5 +61,5 @@ You'll use these to select your PDFs in finder and then run the AppleScripts tha
 # Uninstall
 #### 
 
-For Mac OSX, just run this command in the terminal like you did to install it. It will remove the service and associated folders automatically. 
+For Mac OSX, just run this command in the terminal like you did to install it. It will remove the service and associated folders automatically.  
 `curl -s https://raw.githubusercontent.com/jsphweid/bookletMacro/master/mac-osx/uninstall | bash`
