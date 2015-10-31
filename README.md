@@ -8,7 +8,7 @@
 - [Windows Usage](#windows-usage)
 - [It messed up...](#it-messed-up)
       - [Just try it again and it should work.](#just-try-it-again-and-it-should-work)
-- [Uninstall](#Uninstall)
+- [Uninstall](#uninstall)
 
 
 # Overview
