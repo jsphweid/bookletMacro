@@ -8,7 +8,7 @@ bookletmacro_zip_file="${BOOKLETMACRO_DIR}/installArchive.zip"
 
 echo "creating directory in home folder..."
 mkdir -p "${BOOKLETMACRO_DIR}"
-# cd "${BOOKLETMACRO_DIR}"
+cd "${BOOKLETMACRO_DIR}"
 
 echo "downloading jPDF and .workflow in a ZIP archive..."
 curl -LOk "https://github.com/jsphweid/bookletMacro/raw/master/mac-osx/installArchive.zip" > "${bookletmacro_zip_file}"
