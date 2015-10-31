@@ -9,7 +9,6 @@
 - [It messed up...](#it-messed-up)
       - [Just try it again and it should work.](#just-try-it-again-and-it-should-work)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Overview
 This repository contains both the Windows and Mac files. FYI. And it requires Java 5 or higher. 
@@ -21,7 +20,7 @@ Basically, I wrote a wrapper for Michael Schierl's jPDFTweak that makes booklet 
 Both osx and windows versions work in almost the same way. Using jPDFTweak, it takes your files and makes booklets for each PDF. To make printing on a basic printer simple, it breaks apart each booklet into even and odd pages. Then it combines all of the evens into one file and all of the odds into another. Then you print one file, put those pages back into the printer (depends on your printer, but the program helps you) and print the other file on the other side. Fold and staple and you're done.
 
 # Mac OS X Installation
-###
+####
 [updated 2015-10-30]  
 Install is dead simple. Run the command below in the terminal. Give it a second to download. It will ask you to install a service. Click Okay a time or two. DONE.
 
@@ -34,6 +33,7 @@ Alright, so you don't know what a "terminal" is? I'll spell it out.
 
 # Mac OS X Usage
 ####
+[updated 2015-10-30]  
 Now that the script should be registered as a Service, whenever you right-click (okay... two-finger tap) a file or group of PDFs (and only PDFs...), at the bottom you should see "Booklet Macro." Click it and wait for your two files to appear. (Should take some seconds, unless you gave it a lot to do, then maybe a minute).
 
 # Windows Installation
@@ -56,3 +56,9 @@ The resulting booklet size is determined by the first PDF that it processes... m
 Something else happened? Make an issue on github or contact me some other way.
 
 You'll use these to select your PDFs in finder and then run the AppleScripts that use jPDFTweak
+
+# Uninstall
+#### 
+
+For Mac OSX, just run this command in the terminal like you did to install it. It will remove the service and associated folders automatically. 
+`curl -s https://raw.githubusercontent.com/jsphweid/bookletMacro/master/mac-osx/uninstall | bash`
