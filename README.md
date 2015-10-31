@@ -1,4 +1,4 @@
-# bookletMacros
+# bookletMacro
 - [Overview](#overview)
       - [What is it?](#what-is-it)
       - [How it works in a nutshell.](#how-it-works-in-a-nutshell)
@@ -22,22 +22,17 @@ Both osx and windows versions work in almost the same way. Using jPDFTweak, it t
 
 # Mac OS X Installation
 ###
-1. Download the .zip from this Github page and extract to WHEREVER
-2.  I'm trying to simplify this... but currently, you need to create 2 basic services and add them as contexual menu items in the finder. I'll walk you through this basic process.
-  1. In the .zip you downloaded, open copyFilePath.applescript in a text editor, select all (⌘ + a), and copy that (⌘ + c).
-  2. Use the launch bar (⌘ + spacebar) and open "Automater" and create a new "Service"
-  3. From Library on the left, select "Utilities", double-click "Run AppleScript"
-  4. Delete what is there and paste in what I told ya to copy (⌘ + v)
-  5. Where it says "Service receives selected", choose "files or folders", in "Finder"
-  6. Save it with whatever text you want to be on your context menu (which is what comes up when you write click something) (mine are "Copy File Path" and "Copy Multiple File Paths")
-  7. Repeat a - f for file "copyMultipleFilePaths.applescript"
-3. Whew. Hard part over...
+`curl -s https://raw.githubusercontent.com/jsphweid/bookletMacro/master/mac-osx/install | bash`
+[updated 2015-10-30] Install is dead simple. Run this command in the terminal. Give it a second to download. It will ask you to install a service. Click Okay a time or two. DONE.
+
+Alright, so you don't know what a "terminal" is? I'll spell it out.
+1. Copy the above code (highlight and hit ⌘ + c)
+2. Hit ⌘ + SPACE for spotlight search and type "terminal"
+3. Paste (⌘ + v) and hit enter.
 
 # Mac OS X Usage
 ####
-1. Now select the PDFs you want to print in booklets, right click on them (double tap, whatever), and select either "Copy File Path" or "Copy Multiple File Paths" (whichever is relevant, obviously). The paths to those files are stored in the clipboard.
-2. Go to WHEREVER you unzipped this repo and run "makeBookletsForMac-v0.2.0.app"
-3. The product will appear in the directory that your original pdfs were...
+1. Now that the script should be registered as a Service, whenever you right-click (okay... two-finger tap) a file or group of PDFs (and only PDFs...), at the bottom you should see "Booklet Macro." Click it and wait for your two files to appear. (Should take some seconds, unless you gave it a lot to do, then maybe a minute).
 
 # Windows Installation
 ####
