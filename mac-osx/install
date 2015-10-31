@@ -10,7 +10,7 @@ echo "creating directory in home folder..."
 mkdir -p "${BOOKLETMACRO_DIR}"
 
 echo "downloading jPDF and .workflow in a ZIP archive..."
-curl -LOk "https://github.com/jsphweid/bookletMacro/raw/master/mac-osx/installArchive.zip" > "${bookletmacro_zip_file}"
+curl -LOk "https://github.com/jsphweid/bookletMacro/raw/master/mac-osx/installArchive.zip" -o "${bookletmacro_zip_file}"
 
 echo "unzipping archive..."
 unzip -qo "${bookletmacro_zip_file}" -d "${BOOKLETMACRO_DIR}"
