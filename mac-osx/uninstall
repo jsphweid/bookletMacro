@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "removing .booketMacro folder..."
+rm -rf ~/.booketMacro/
+
+# note to self... add it all old versions...
+echo "removing Booklet Macro service..."
+rm -rf ~/Library/Services/Booklet\ Macro\ v0.3.1.workflow/
+
+echo "Uninstall complete."
