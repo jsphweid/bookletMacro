@@ -22,14 +22,14 @@ Both osx and windows versions work in almost the same way. Using jPDFTweak, it t
 
 # Mac OS X Installation
 ###
-[updated 2015-10-30]
+[updated 2015-10-30]  
 Install is dead simple. Run the command below in the terminal. Give it a second to download. It will ask you to install a service. Click Okay a time or two. DONE.
 
 `curl -s https://raw.githubusercontent.com/jsphweid/bookletMacro/master/mac-osx/install | bash`
 
-Alright, so you don't know what a "terminal" is? I'll spell it out.
-1. Copy the above code (highlight and hit ⌘ + c)
-2. Hit ⌘ + SPACE for spotlight search and type "terminal"
+Alright, so you don't know what a "terminal" is? I'll spell it out.  
+1. Copy the above code (highlight and hit ⌘ + c)  
+2. Hit ⌘ + SPACE for spotlight search and type "terminal"  
 3. Paste (⌘ + v) and hit enter.
 
 # Mac OS X Usage
