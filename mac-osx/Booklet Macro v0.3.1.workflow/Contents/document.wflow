@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>417</string>
+	<key>AMApplicationVersion</key>
+	<string>2.6</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>set progress total steps to 7-- GET PATHS OF SELECTED ITEMS-- from here: http://www.mactips.info/2010/11/how-to-easily-copy-the-path-of-a-fileset the_items to {}tell application "Finder" to set selected_items to the selection as alias listrepeat with i from 1 to count of the selected_items	copy (POSIX path of (item i of the selected_items)) to the end of the_itemsend repeatset text item delimiters to returnset the clipboard to the_items as text-- if only one item, then use this other one to set the clipboard, it actually does 1 item correctlyset test to count of the_itemsif test is 1 then	tell application "Finder" to set the clipboard to the POSIX path of (the selection as alias)end if-- DIALOG FOR DETERMINING PRINTER TYPEset response to the button returned of (display dialog "How does the paper come out of your printer?" buttons {"face up to face up", "face down to face down", "face up to face down"})-- OBTAIN CLIPBOARD'S CONTENTS (must have accompanying script(s))set listContents to get the clipboardset delimitedList to paragraphs of listContents-- GET INITIAL DATE AND TIMEset dateTime to do shell script "date '+%Y-%m-%d'" &amp; "_%T"set {TID, text item delimiters} to {text item delimiters, ":"}set dateTime to text items of dateTimeset text item delimiters to ""set dateTime to dateTime as textset text item delimiters to TID-- GET SCRIPT FOLDER PATHset path_ to (path to me)tell application "Finder"	set theFolder to (container of item path_)end tell--set thePOSIXFolder to ((POSIX path of (theFolder as alias)) as string) -- old way, when script was always in same folder as jPDFset thePOSIXFolder to "~/.bookletMacro"set progress completed steps to 1-- DETERMINE SIZE OF FIRST PDF (assuming they are all the same)set firstItem to item 1 of delimitedListset moreInfo to do shell script ¬	"cd " &amp; thePOSIXFolder &amp; "; ¬
+	cd jPDF/; ¬
+	java -jar jpdftweak.jar -i " &amp; "\"" &amp; firstItem &amp; "\"" &amp; " -moreinfo -"set moreInfoArray to my theSplit(moreInfo, " ")set moreInfoArrayCount to count of moreInfoArrayset lastElementInMoreInfoArray to item moreInfoArrayCount of moreInfoArrayset sizeArray to my theSplit(lastElementInMoreInfoArray, "x")set width to item 1 of sizeArrayset height to item 2 of sizeArrayset progress completed steps to 2-- make temp folderset workingFolder to do shell script "dirname " &amp; quoted form of firstItemset tempFolderName to "tempPDFs_" &amp; dateTimedo shell script "cd " &amp; workingFolder &amp; "; mkdir " &amp; tempFolderName-- perhaps I will add a dialog box here with some infos...&gt;?set progress completed steps to 3-- MAKE BOOKLETS, PART ONEset misScaledOutputs to {}repeat with currentItem in delimitedList	tell application "Finder"		set parentPathName to do shell script "dirname " &amp; quoted form of currentItem		set fileName to my basename(currentItem)		set output to parentPathName &amp; "/" &amp; tempFolderName &amp; "/_" &amp; fileName		set the |misScaledOutputs| to the |misScaledOutputs| &amp; output		do shell script ¬			"cd " &amp; thePOSIXFolder &amp; "; ¬
+			cd jPDF/; ¬
+			java -jar jpdftweak.jar -i \"" &amp; currentItem &amp; "\"" &amp; " -scale 1684,1191,r -shuffle -4:!-4L0.707+0%-100%,+1L.707+0%-200%,!+2L0.707+0%-100%,-3L.707+0%-200% -rotate R -o " &amp; "\"" &amp; output &amp; "\""	end tellend repeatset progress completed steps to 4-- CORRECT PAGE DIMENSIONS, PART TWOset correctOutputs to {}set newWidth to width * 2repeat with currentItem in misScaledOutputs		-- check if file exists first (it has finished from last operation)	-- must first convert file path into something "exists file" understands	set x to (currentItem) as string	set posixPath to POSIX path of x	set ascriptPath to POSIX file posixPath	tell application "Finder"		activate		repeat while not (exists file ascriptPath)			delay 0.1		end repeat				-- resize		--		set parentPathName to do shell script "dirname " &amp; quoted form of currentItem		set fileName to my basename(currentItem)		set output to parentPathName &amp; "/__booklet" &amp; fileName		set end of correctOutputs to output		do shell script ¬			"cd " &amp; thePOSIXFolder &amp; "; ¬
+			cd jPDF/; ¬
+			java -jar jpdftweak.jar -i \"" &amp; currentItem &amp; "\" -scale " &amp; newWidth &amp; "," &amp; height &amp; ",r -o " &amp; "\"" &amp; output &amp; "\""	end tellend repeatset progress completed steps to 5-- SEPARATE EVEN AND ODD FILESset evens to {}set odds to {}repeat with currentItem in correctOutputs		-- check if file exists	set x to (currentItem) as string	set posixPath to POSIX path of x	set ascriptPath to POSIX file posixPath	tell application "Finder"		activate		repeat while not (exists file ascriptPath)			delay 0.1		end repeat				-- separate even and odd		set parentPathName to do shell script "dirname " &amp; quoted form of currentItem		set fileName to my basename(currentItem)		-- separate even		set outputEven to parentPathName &amp; "/even_" &amp; fileName		set end of evens to outputEven		do shell script ¬			"cd " &amp; thePOSIXFolder &amp; "; ¬
+			cd jPDF/; ¬
+			java -jar jpdftweak.jar -ie \"" &amp; currentItem &amp; "\" -o " &amp; "\"" &amp; outputEven &amp; "\""		-- separate odd		set outputOdd to parentPathName &amp; "/odd_" &amp; fileName		set end of odds to outputOdd		do shell script ¬			"cd " &amp; thePOSIXFolder &amp; "; ¬
+			cd jPDF/; ¬
+			java -jar jpdftweak.jar -io \"" &amp; currentItem &amp; "\" -o " &amp; "\"" &amp; outputOdd &amp; "\""	end tellend repeatset progress completed steps to 6-- MERGE EVEN AND ODDS-- stage names from responseif response is "face down to face down" then	set evenFileName to "/1-even-mergedPDFs.pdf"	set oddFileName to "/2-odd-mergedPDFs.pdf"end ifif response is "face up to face up" then	set oddFileName to "/1-odd-mergedPDFs.pdf"	set evenFileName to "/2-even-mergedPDFs.pdf"end ifif response is "face up to face down" then	set oddFileName to "/1-odd-mergedPDFs.pdf"	set evenFileName to "/2-evenAndReversed-mergedPDFs.pdf"end if-- create evens long stringset longEvensString to ""repeat with currentItem in evens	-- check if file exists	set x to (currentItem) as string	set posixPath to POSIX path of x	set ascriptPath to POSIX file posixPath	tell application "Finder"		activate		repeat while not (exists file ascriptPath)			delay 0.1		end repeat				-- basically, come up with long 'even' string		set parentPathName to do shell script "dirname " &amp; quoted form of currentItem		set fileName to my basename(currentItem)		set longEvensString to longEvensString &amp; " -i \"" &amp; currentItem &amp; "\""	end tellend repeat-- get the logic right for the evens... gahif (response is "face down to face down") or (response is "face up to face up") then		do shell script "cd " &amp; thePOSIXFolder &amp; "; cd jPDF/; java -jar jpdftweak.jar " &amp; longEvensString &amp; " -o \"" &amp; workingFolder &amp; evenFileName &amp; "\""end ifif response is "face up to face down" then	set unreversed to parentPathName &amp; "/_____evenUnreversed.pdf"	-- make it but unreversed	do shell script "cd " &amp; thePOSIXFolder &amp; "; cd jPDF/; java -jar jpdftweak.jar " &amp; longEvensString &amp; " -o \"" &amp; unreversed &amp; "\""	-- wait for file to exist	set x to (unreversed) as string	set posixPath to POSIX path of x	set ascriptPath to POSIX file posixPath	tell application "Finder"		activate		repeat while not (exists file ascriptPath)			delay 0.1		end repeat	end tell	-- reverse it and make it in the main folder	do shell script "cd " &amp; thePOSIXFolder &amp; "; cd jPDF/; java -jar jpdftweak.jar -i \"" &amp; unreversed &amp; "\" -shuffle 1:!-1N1+0%+0% -o \"" &amp; workingFolder &amp; evenFileName &amp; "\""end if-- create odds long stringset longOddsString to ""repeat with currentItem in odds	-- check if file exists	set x to (currentItem) as string	set posixPath to POSIX path of x	set ascriptPath to POSIX file posixPath	tell application "Finder"		activate		repeat while not (exists file ascriptPath)			delay 0.1		end repeat				-- basically, come up with long 'odd' string		set parentPathName to do shell script "dirname " &amp; quoted form of currentItem		set fileName to my basename(currentItem)		set longOddsString to longOddsString &amp; " -i \"" &amp; currentItem &amp; "\""	end tellend repeat-- no logic for the odds... yaydo shell script "cd " &amp; thePOSIXFolder &amp; "; cd jPDF/; java -jar jpdftweak.jar " &amp; longOddsString &amp; " -o \"" &amp; workingFolder &amp; oddFileName &amp; "\""set progress completed steps to 7-- helper functionson theSplit(theString, theDelimiter)	-- save delimiters to restore old settings	set oldDelimiters to AppleScript's text item delimiters	-- set delimiters to delimiter to be used	set AppleScript's text item delimiters to theDelimiter	-- create the array	set theArray to every text item of theString	-- restore the old setting	set AppleScript's text item delimiters to oldDelimiters	-- return the result	return theArrayend theSpliton basename(x)	if x is "/" then return "/"	if item -1 of x is "/" then set x to text 1 thru -2 of x	set text item delimiters to "/"	text item -1 of xend basename</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>A89920C3-7EDC-4DB6-8A18-21272EBB06C5</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>F334F411-2579-4CC3-98C4-7DB3083F5D07</string>
+				<key>UUID</key>
+				<string>4C000A60-D587-4CF7-B288-7EDDC239E94F</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:316.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>serviceApplicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>serviceApplicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.fileSystemObject.PDF</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>

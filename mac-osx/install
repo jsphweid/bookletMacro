@@ -1,2 +1,18 @@
 #!/bin/bash
-echo "test"
+
+if [ -z "${BOOKLETMACRO_DIR}" ]; then
+    BOOKLETMACRO_DIR="$HOME/.bookletMacro"
+fi
+
+bookletmacro_zip_file="${BOOKLETMACRO_DIR}/jpdf.zip"
+
+echo "creating directory in home folder..."
+mkdir -p "${BOOKLETMACRO_DIR}"
+
+echo "downloading jPDF in a ZIP archive..."
+curl -LOk "https://github.com/jsphweid/bookletMacro/blob/master/mac-osx/jpdfZip.zip" > "${bookletmacro_zip_file}"
+
+echo "downloading script/service/workflow..."
+
+echo "unzipping jPDF..."
+unzip -qo "${bookletmacro_zip_file}" -d "${BOOKLETMACRO_DIR}"
