@@ -9,6 +9,7 @@
 - [It messed up...](#it-messed-up)
       - [Just try it again and it should work.](#just-try-it-again-and-it-should-work)
 - [Uninstall](#uninstall)
+- [Building the Project from source](#building-the-project-from-source)
 
 
 # Overview
@@ -35,21 +36,17 @@ Alright, so you don't know what a "terminal" is? I'll spell it out.
 # Mac OS X Usage
 ####
 [updated 2015-10-30]  
-Now that the script should be registered as a Service, whenever you right-click (okay... two-finger tap) a file or group of PDFs (and only PDFs...), at the bottom you should see "Booklet Macro." Click it and wait for your two files to appear. (Should take some seconds, unless you gave it a lot to do, then maybe a minute).
+Now that the script should be registered as a Service, whenever you right-click (okay... two-finger tap) a file or group of PDFs (and only PDFs...), at the bottom you should see "Booklet Macro" Click it and wait for your two files to appear. (Should take some seconds, unless you gave it a lot to do, then maybe a minute).
 
 # Windows Installation
 ####
-1. Download and extract .zip to WHEREVER
+[updated 2015-10-31]
+[Download the installer here.](https://github.com/jsphweid/bookletMacro/raw/master/windows/releases/bookletMacro-v0.3.1.exe).
 
 # Windows Usage
 ####
-1. If you don't autohotkey installed, just run bookletMacros v0.2.0.exe. The script is now running.
-2. Hit CAPS, which brings up the GUI (hitting CAPS again will hide it). Go to the "Settings" tab, select the correct setting for your printer (you may have to experiment) and click "Save"
-3. Select the files you want to use it on and push CAPS. Click "1. make booklet"
-4. This will make new files in that folder with a "__" at the beginning of the file name. Select all of those, push CAPS, now click "2. separate even and odd"
-5. This will create more new files with "__even" and "__odd" added on. Now select all the "__even", hit CAPS, click "3. merge" and do the same for the "__odd".
-6. This will create your final product at the top of all of those files called "___1-odd.pdf" and "___2-even (and reversed" or something slightly different, depending on your settings in step 2.
-
+[updated 2015-10-31]
+It's a lot easier now... Just select a group of PDFs, and click "run bookletMacro". The 2 product files will appear in the same directory as the PDFs that you had highlighted.
 
 # It messed up...
 #### 
