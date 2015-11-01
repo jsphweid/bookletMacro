@@ -52,14 +52,25 @@ Now that the script should be registered as a Service, whenever you right-click 
 
 
 # It messed up...
-#### Just try it again and it should work.
-The resulting booklet size is determined by the first PDF that it processes... meaning they all have to be the same size. I.E. Don't select some 8.5 x 11's and 9 x 12's at the same time and run the macro. This would be a bad idea...
-Something else happened? Make an issue on github or contact me some other way.
+#### 
+Just try it again and it should work.
 
-You'll use these to select your PDFs in finder and then run the AppleScripts that use jPDFTweak
+The resulting booklet size is determined by the first PDF that it processes... meaning they all have to be the same size. I.E. Don't select some 8.5 x 11's and 9 x 12's at the same time and run the macro. This would be a bad idea...
+
+Something else happened? Make an issue on github or contact me some other way.
 
 # Uninstall
 #### 
 
 For Mac OSX, just run this command in the terminal like you did to install it. It will remove the service and associated folders automatically.  
 `curl -s https://raw.githubusercontent.com/jsphweid/bookletMacro/master/mac-osx/uninstall | bash`
+
+For Windows, just go to the place where you installed it and there is an uninstall .exe in the folder.
+
+# Building the Project from source
+####
+Okay, so you want to modify / contribute.
+
+For the Mac version, the .workflow file (which is the script, but also contains information how the script is started... which is through the context menu) is the actual code that I wrote. So if you change that it is probably best to simply delete the current workflow in ~/Library/Services and execute the .workflow again. jPDF is contained within ~/.bookletMacro
+
+For the Windows version, you'll need Autohotkey installed to compile those scripts (parts of my script rely on it being compiled and not .ahk file) and NSIS if you want to make an installer. Basically, compile both .ahk scripts, run the .nsi file which will spit out an installer.
