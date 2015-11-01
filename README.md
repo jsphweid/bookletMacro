@@ -41,7 +41,7 @@ Now that the script should be registered as a Service, whenever you right-click 
 # Windows Installation
 ####
 [updated 2015-10-31]
-[Download the installer here.](https://github.com/jsphweid/bookletMacro/raw/master/windows/releases/bookletMacro-v0.3.1.exe).
+[Download the installer here.](https://github.com/jsphweid/bookletMacro/raw/master/windows/releases/bookletMacro-v0.3.1.exe)..
 
 # Windows Usage
 ####
@@ -68,6 +68,6 @@ For Windows, just go to the place where you installed it and there is an uninsta
 ####
 Okay, so you want to modify / contribute.
 
-For the Mac version, the .workflow file (which is the script, but also contains information how the script is started... which is through the context menu) is the actual code that I wrote. So if you change that it is probably best to simply delete the current workflow in ~/Library/Services and execute the .workflow again. jPDF is contained within ~/.bookletMacro
+For the Mac version, the .workflow file (which is the script, but also contains information how the script is started... which is through the context menu) is the actual code that I wrote. So if you change that it is probably best to simply delete the current workflow in ~/Library/Services and execute the .workflow again. jPDF is contained within ~/.bookletMacro.
 
 For the Windows version, you'll need Autohotkey installed to compile those scripts (parts of my script rely on it being compiled and not .ahk file) and NSIS if you want to make an installer. Basically, compile both .ahk scripts, run the .nsi file which will spit out an installer.
