@@ -1,0 +1,11 @@
+PAGECOUNT 4
+ENCRYPTION -1
+    OWNERPW 
+    USERPW 
+DOCINFO CreationDate=D:20151018144145+05'00'
+DOCINFO Producer=Nitro PDF PrimoPDF; modified using iText® 5.1.3 ©2000-2011 1T3XT BVBA
+DOCINFO Author=jweidinger
+DOCINFO Title=2015-10-18_what even is jazz_joseph weidinger_score - CLARINET IN Bb
+DOCINFO ModDate=D:20151030084401-05'00'
+DOCINFO Creator=PrimoPDF http://www.primopdf.com
+PAGESIZE 1-4 1684.0x1191.0

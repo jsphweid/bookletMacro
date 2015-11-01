@@ -1,7 +1,10 @@
-v0.3.1 -- released 2015-03-06 --
+v0.3.1 (win)-- released 2015-10-31 --
+- Update for Win version to make it just like the mac, which is (even easier) to install and easy to run. All driven through the right-click context menu.
+
+v0.3.1 (mac)-- released 2015-10-30 --
 - Update for Mac version to make it dead simple to install using curl / terminal. Also, the process has changed to be even simpler. Simply select the pdfs, right click, click "Booklet Macro." DONE.
 
-v0.3.0 -- released 2015-03-04 --
+v0.3.0 -- released 2015-10-28 --
 - Initial MAC version. I have 2 context menu items that copy file paths. Then you simply find the folder with the app and run it. Pretty simple. Could be better
 
 v0.2.0 --
