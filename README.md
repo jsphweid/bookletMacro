@@ -2,6 +2,7 @@
 - [Overview](#overview)
       - [What is it?](#what-is-it)
       - [How it works in a nutshell.](#how-it-works-in-a-nutshell)
+      - [Disclaimer](#disclaimer)
 - [Mac OS X Installation](#mac-os-x-installation)
 - [Mac OS X Usage](#mac-os-x-usage)
 - [Windows Installation](#windows-installation)
@@ -20,6 +21,9 @@ Basically, I wrote a wrapper for Michael Schierl's jPDFTweak that makes booklet 
 
 #### How it works in a nutshell.
 Both osx and windows versions work in almost the same way. Using jPDFTweak, it takes your files and makes booklets for each PDF. To make printing on a basic printer simple, it breaks apart each booklet into even and odd pages. Then it combines all of the evens into one file and all of the odds into another. Then you print one file, put those pages back into the printer (depends on your printer, but the program helps you) and print the other file on the other side. Fold and staple and you're done.
+
+#### Disclaimer.
+This is open source. It ain't perfect. It works well most of the time. Having said that, occasionally I see a weird result.  I do not take responsibility for any problems you have because the macros didn't work and you're at the session with strange things on the page. When you make the PDFs, give them a once over to make sure everything looks good. If it doesn't, just delete the garbage files and run it again. If you don't give yourself those seconds and that hawk eye, you're liable to introduce mistakes in any step along the way. So check 'em first.
 
 # Mac OS X Installation
 ####
