@@ -49,7 +49,7 @@ Return
 
 makeBooklets(whichOrientation) {
 	FormatTime, TimeString,R,_yyyy-MM-dd_HHmmss
-	newDirString = tempPDFs%TimeString%
+	newDirString = byproductPDFs%TimeString%
 	tempFilesDirectory = %A_WorkingDir%\%newDirString%
 	FileCreateDir, %tempFilesDirectory%
 
