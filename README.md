@@ -22,6 +22,10 @@ Basically, I wrote a wrapper for Michael Schierl's jPDFTweak that makes booklet 
 #### How it works in a nutshell.
 Both osx and windows versions work in almost the same way. Using jPDFTweak, it takes your files and makes booklets for each PDF. To make printing on a basic printer simple, it breaks apart each booklet into even and odd pages. Then it combines all of the evens into one file and all of the odds into another. Then you print one file, put those pages back into the printer (depends on your printer, but the program helps you) and print the other file on the other side. Fold and staple and you're done.
 
+The intermediary PDFs that are created in the process are stored in the "byproductPDFs%DATETIME% folder that you'll see as soon as the macro is run. Plain unseparated booklet files are also stored in this folder. You might find some of these useful for reference. Or you can simply delete it later.
+
+The PDFs that you want will appear in the original folder you ran the macro in (never in the byproduct folder). They will be titled something like "1-odd-mergedPDFs.pdf" and "2-evenAndReversed-mergedPDFs.pdf" (depending on your printer type). Always print 1 first and 2 second, regardless of how the rest of the files are named.
+
 #### Disclaimer.
 This is open source. It ain't perfect. It works well most of the time. Having said that, occasionally I see a weird result.  I do not take responsibility for any problems you have because the macros didn't work and you're at the session with strange things on the page. When you make the PDFs, give them a once over to make sure everything looks good. If it doesn't, just delete the garbage files and run it again. If you don't give yourself those seconds and that hawk eye, you're liable to introduce mistakes in any step along the way. So check 'em first.
 
@@ -40,7 +44,7 @@ Alright, so you don't know what a "terminal" is? I'll spell it out.
 # Mac OS X Usage
 ####
 [updated 2015-10-30]  
-Now that the script should be registered as a Service, whenever you right-click (okay... two-finger tap) a file or group of PDFs (and only PDFs...), at the bottom you should see "Booklet Macro" Click it and wait for your two files to appear. (Should take some seconds, unless you gave it a lot to do, then maybe a minute).
+Now that the script should be registered as a Service, whenever you right-click (okay... two-finger tap) a file or group of PDFs (and only PDFs...), at the bottom you should see "Booklet Macro" (if you have a lot of context menu items, it might be under "Services") Click it and wait for your two files to appear.
 
 # Windows Installation
 ####
@@ -50,7 +54,7 @@ Now that the script should be registered as a Service, whenever you right-click 
 # Windows Usage
 ####
 [updated 2015-10-31]
-It's a lot easier now... Just select a group of PDFs, and click "run bookletMacro". The 2 product files will appear in the same directory as the PDFs that you had highlighted.
+It's a lot easier now... Just select a group of PDFs, and click "run bookletMacro". The newly created byproduct folder will appear and seconds later your resulting PDFs will be there also.
 
 # It messed up...
 #### 
