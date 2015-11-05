@@ -15,7 +15,7 @@
 
 # Overview
 This repository contains both the Windows and Mac files. FYI. And it requires Java 5 or higher. 
-[DEMO video here:] (https://www.youtube.com/watch?v=Jiq5TR0RN-A)
+[DEMO video here] (https://www.youtube.com/watch?v=Jiq5TR0RN-A)
 
 #### What is it?
 Basically, I wrote a wrapper for Michael Schierl's jPDFTweak that makes booklet printing simple. The exact use in an example: You have 20 music parts in 9 x 12 (or whatever page size)... say for an orchestra. Without a large-format printer that ALSO auto-duplexes, this is difficult and tricky. This makes it simple, however. 
