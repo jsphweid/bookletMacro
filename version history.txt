@@ -1,3 +1,6 @@
+v0.3.2 (mac)— released 2015-11-11
+- Fixed a small bug in the mac version that would crash the program if you had spaces in any of your folder names…
+
 v0.3.1 (win)-- released 2015-10-31 --
 - Update for Win version to make it just like the mac, which is (even easier) to install and easy to run. All driven through the right-click context menu.
 

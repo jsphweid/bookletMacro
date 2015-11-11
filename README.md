@@ -1,4 +1,5 @@
 # bookletMacro
+- [Recent Updates and Fixes](#recent-updates-and-fixes)
 - [Overview](#overview)
       - [What is it?](#what-is-it)
       - [How it works in a nutshell.](#how-it-works-in-a-nutshell)
@@ -11,6 +12,17 @@
       - [Just try it again and it should work.](#just-try-it-again-and-it-should-work)
 - [Uninstall](#uninstall)
 - [Building the Project from source](#building-the-project-from-source)
+
+# Recent Updates and Fixes
+
+v0.3.2 (mac)— released 2015-11-11
+- Fixed a small bug in the mac version that would crash the program if you had spaces in any of your folder names…
+
+v0.3.1 (win)-- released 2015-10-31 --
+- Update for Win version to make it just like the mac, which is (even easier) to install and easy to run. All driven through the right-click context menu.
+
+v0.3.1 (mac)-- released 2015-10-30 --
+- Update for Mac version to make it dead simple to install using curl / terminal. Also, the process has changed to be even simpler. Simply select the pdfs, right click, click "Booklet Macro." DONE.
 
 
 # Overview
