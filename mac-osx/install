@@ -17,4 +17,4 @@ echo "unzipping archive..."
 unzip -qo "${bookletmacro_zip_file}" -d "${BOOKLETMACRO_DIR}"
 
 echo "prompting to install service..."
-open "${BOOKLETMACRO_DIR}/Booklet Macro v0.3.1.workflow"
+open "${BOOKLETMACRO_DIR}/Booklet Macro v0.3.2.workflow"
