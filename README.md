@@ -75,6 +75,14 @@ Just try it again and it should work.
 
 The resulting booklet size is determined by the first PDF that it processes... meaning they all have to be the same size. I.E. Don't select some 8.5 x 11's and 9 x 12's at the same time and run the macro. This would be a bad idea...
 
+2016-02-11
+UPDATE: 
+On OSX, it may bug you to install Java even though you've already went through the motions to install it. If running "java -version" in the terminal tells you no version of Java is installed, JAVA_HOME might not be set properly. You can try to fix that with googling but I've found in one instance that simply installing Java for OSX (from Apple's site, not Oracle's) basically corrects this one way or another.
+
+Also, a PDF can have varying levels of security preventing jPDFTweak from working. If you dealing with these type of files, they need to be cracked first.
+
+
+
 Something else happened? Make an issue on github or contact me some other way.
 
 # Uninstall
