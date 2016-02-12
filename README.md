@@ -9,7 +9,6 @@
 - [Windows Installation](#windows-installation)
 - [Windows Usage](#windows-usage)
 - [It messed up...](#it-messed-up)
-      - [Just try it again and it should work.](#just-try-it-again-and-it-should-work)
 - [Uninstall](#uninstall)
 - [Building the Project from source](#building-the-project-from-source)
 
@@ -71,6 +70,7 @@ It's a lot easier now... Just select a group of PDFs, and click "run bookletMacr
 
 # It messed up...
 #### 
+
 Just try it again and it should work.
 
 The resulting booklet size is determined by the first PDF that it processes... meaning they all have to be the same size. I.E. Don't select some 8.5 x 11's and 9 x 12's at the same time and run the macro. This would be a bad idea...
